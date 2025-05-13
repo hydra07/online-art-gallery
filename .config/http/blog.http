@@ -1,0 +1,61 @@
+### Get all blogs
+GET http://localhost:5000/api/blog
+
+### Get published blogs
+GET http://localhost:5000/api/blog/published
+
+### Get last edited blog by user
+GET http://localhost:5000/api/blog/last-edited
+Authorization: Bearer <your-token>
+
+### Get user blogs
+GET http://localhost:5000/api/blog/user-blogs
+Authorization: Bearer <your-token>
+
+### Get blog by ID
+GET http://localhost:5000/api/blog/1
+
+### Create a new blog
+POST http://localhost:5000/api/blog
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "title": "New Blog",
+  "content": "Blog content",
+  "image": "http://example.com/image.jpg",
+  "tags": ["tag1", "tag2"]
+}
+
+### Update a blog
+PUT http://localhost:5000/api/blog/1
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "title": "Updated Blog",
+  "content": "Updated content",
+  "image": "http://example.com/updated-image.jpg",
+  "tags": ["tag1", "tag3"]
+}
+
+### Delete a blog
+DELETE http://localhost:5000/api/blog/1
+Authorization: Bearer <your-token>
+
+### Request to publish a blog
+PUT http://localhost:5000/api/blog/1/request-publish
+Authorization: Bearer <your-token>
+
+### Approve a blog
+PUT http://localhost:5000/api/blog/1/approve
+Authorization: Bearer <your-token>
+
+### Reject a blog
+PUT http://localhost:5000/api/blog/1/reject
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "reason": "Rejection reason"
+}

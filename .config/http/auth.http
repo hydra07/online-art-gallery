@@ -1,0 +1,51 @@
+### AUTH with phone (add "username" in first time)
+POST http://localhost:5000/api/auth/
+Content-Type: application/json
+
+{
+  "provider":"phone",
+  "phone":"0941320557",
+  "password":"123456"
+  
+}
+
+### AUTH with oauth
+# first time login
+# "email": "john@gmail.com",
+# "username": "John Smith",
+# "image": "https://lh3.googleusercontent.com/a-/AOh14Gj3"
+POST http://localhost:5000/api/auth/
+Content-Type: application/json
+
+{
+  "provider": "google",
+  "providerId": "118303620303769287374"
+}
+
+
+### GET token
+POST http://localhost:5000/api/auth/token
+Content-Type: application/json
+
+{
+  "phone":"0923113321",
+  "provider":"phone"
+}
+
+### decode token
+GET http://localhost:5000/api/auth/decode/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3M2IwNzM2NDlmZGU4YjY1MGEwZjM2ZiIsInJvbGUiOlsidXNlciJdLCJpYXQiOjE3MzE5NDM1OTksImV4cCI6MTczMjAyOTk5OX0.sJ2UySEzUZ2FEPZBAHS0gKUKtFSJNVtSFIm52aeO5Hs
+
+
+### refresh token
+POST http://localhost:5000/api/auth/refresh
+Content-Type: application/json
+
+{
+    "oldToken" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjUwNDQ4YTZiY2RiMzcxZmFjZTViNiIsInJvbGUiOlsidXNlciJdLCJpYXQiOjE3MzQ2ODAxODcsImV4cCI6MTczNTI4NDk4N30.VQ68IR9Mc-hxwGDou0p9UmFe-DF84icPm8zTYb_3YGs"
+}
+
+
+
+###
+GET http://localhost:5000/api/auth/test/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3M2Q5NjdhMjU0MWM5MTQ3ZjE2YmE1YiIsInJvbGUiOlsidXNlciJdLCJpYXQiOjE3MzIwODk1NzEsImV4cCI6MTczMjE3NTk3MX0.Fc4XDAJlxPve6wTjWDCh8ntp3chRD-A--YQQ5U0wkEk

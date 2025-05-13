@@ -1,0 +1,28 @@
+### Create Bank Request
+POST http://localhost:5000/api/bankrequest/create
+Content-Type: application/json
+
+{
+    "walletId": "<WALLET_ID>",
+    "amount": 100,
+    "bankName": "Bank A",
+    "idAccount": "123456789"
+}
+
+### Get Bank Requests
+GET http://localhost:5000/api/bankrequest/<WALLET_ID>
+
+### Create a withdrawal request
+POST http://localhost:5000/api/bankrequest/withdraw
+Content-Type: application/json
+Authorization: Bearer YOUR_AUTH_TOKEN_HERE
+
+{
+  "amount": 200,
+  "bankName": "Example Bank",
+  "idAccount": "1234567890"
+}
+
+### Get all withdrawal requests
+GET http://localhost:5000/api/bankrequest/withdrawals
+Authorization: Bearer YOUR_AUTH_TOKEN_HERE

@@ -1,0 +1,39 @@
+{
+	"name": "oag",
+	"version": "1.0.0",
+	"description": "OAG",
+	"workspaces": [
+		"api",
+		"client",
+		"client-admin"
+	],
+	"scripts": {
+		"dev:frontend": "cd client && next dev",
+		"dev:backend": "cd api && bun dev",
+		"dev:admin": "cd client-admin && bun dev",
+		"dev": "concurrently \"bun run dev:frontend\" \"bun run dev:backend\" \"bun run dev:admin\"",
+		"lint": "bun run lint:api && bun run lint:client && bun run lint:client-admin",
+		"lint:api": "cd api && bun lint",
+		"lint:client": "cd client && bun lint",
+		"lint:client-admin": "cd client-admin && bun lint",
+		"format": "prettier --write .",
+		"prepare": "husky install"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"./": [
+			"bun lint",
+			"bun format"
+		]
+	},
+	"dependencies": {
+		"concurrently": "^6.2.0",
+		"husky": "^7.0.2",
+		"lint-staged": "^11.0.0",
+		"prettier": "^2.4.1"
+	}
+}

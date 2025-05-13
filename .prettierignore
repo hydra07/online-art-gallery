@@ -1,0 +1,13 @@
+# root
+node_modules/
+
+#client 
+client/.next/
+client/node_modules/
+
+#client-admin
+client-admin/.next/
+client-admin/node_modules/
+
+#api
+api/node_modules/

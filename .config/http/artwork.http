@@ -1,0 +1,72 @@
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDE1ODAwZDhhZDJkZDc5YzY5MDQ0ZSIsInJvbGUiOlsidXNlciIsImFydGlzdCIsImFkbWluIl0sImlhdCI6MTc0Mzc1MDY1MCwiZXhwIjoxNzQzODM3MDUwfQ.nrWwp0sojE0NBKwqb5A3PfaOcLOglyGewQOmq2pXstw
+
+### Add Artwork
+POST http://localhost:5000/api/artwork
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDE1ODAwZDhhZDJkZDc5YzY5MDQ0ZSIsInJvbGUiOlsidXNlciIsImFydGlzdCIsImFkbWluIl0sImlhdCI6MTc0Mjk3NDY3MCwiZXhwIjoxNzQzMDYxMDcwfQ.t6fnl_c5xAo4g9PG4rRDhoua_YUljOFuWKFBTsRdXEo
+
+{
+  "title": "Rustic Treehouse Overlooking fucking good",
+  "description": "Nestled amidst a lush, sprawling forest with rolling hills stretching beyond the horizon, this rustic treehouse stands as a quiet retreat into nature. Constructed with weathered wooden planks, the elevated cabin appears to be a charming sanctuary, blending seamlessly with the greenery around it. Positioned at the edge of a small clearing, the structure is supported by sturdy wooden beams and accessed via a simple yet functional wooden staircase with railings. \n\nSurrounding the treehouse, an expanse of dense trees dominates the landscape, creating a natural enclosure that exudes tranquility. The vibrant green leaves of deciduous trees intermingle with the darker, deeper hues of evergreen conifers, crafting a rich tapestry of foliage that stretches far and wide. Their branches intertwine overhead, forming a soft canopy that filters sunlight and casts gentle dappled shadows onto the ground below. \n\nIn the background, rolling hills covered in thick vegetation rise gradually, their peaks fading into a hazy, golden horizon. The atmosphere is imbued with a sense of serenity, where the sounds of rustling leaves and distant bird songs replace the bustling noise of urban life. The image evokes a feeling of solitude and peace, ideal for those seeking an escape from modernity to reconnect with the wilderness. \n\nThe rustic charm of the treehouse suggests a handcrafted dwelling, possibly used for quiet reflection, writing, or as a temporary shelter for adventurers exploring the wilderness. Its aged wooden exterior, simple door, and modest size indicate a minimalist yet functional design, offering just enough space for a person to rest while being immersed in nature. \n\nThe small clearing surrounding the treehouse is adorned with wildflowers and patches of grass, adding to the organic beauty of the scene. The uneven terrain with small mounds of earth and rocks further enhances the untouched, raw appeal of the landscape. \n\nAs the sun begins to set, a warm, golden hue washes over the scenery, softening the outlines of the distant hills and casting a gentle glow on the treetops. The interplay of light and shadow enriches the visual depth of the scene, making it a picturesque representation of nature's harmony. \n\nThis image encapsulates the essence of a hidden getaway, a place where time slows down, and one can embrace the quiet rhythms of the natural world. Whether used as a childhood hideout, a writer’s retreat, or simply a place to pause and appreciate the beauty of life, this rustic treehouse serves as a symbol of simplicity and a reminder of the profound peace found in the embrace of nature.",
+  "category": ["Nature", "Landscape", "Rustic Architecture", "Forest", "Treehouse"],
+  "dimensions": {
+    "width": 1178,
+    "height": 768
+  },
+  "url": "https://fastly.picsum.photos/id/424/2452/1599.jpg?hmac=lX1mbca2dlRPTxIQZc2Ix-zZ7eAoipOsm3GBndBSluk",
+  "status": "available",
+  "price": 0
+}
+
+
+### Get Artworks
+GET http://localhost:5000/api/artwork
+
+
+### Get Artwork by artist
+GET http://localhost:5000/api/artwork/artist?take=1&skip=0
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDE1ODAwZDhhZDJkZDc5YzY5MDQ0ZSIsInJvbGUiOlsidXNlciIsImFydGlzdCIsImFkbWluIl0sImlhdCI6MTc0Mjk3NDY3MCwiZXhwIjoxNzQzMDYxMDcwfQ.t6fnl_c5xAo4g9PG4rRDhoua_YUljOFuWKFBTsRdXEo 
+
+### Get Artwork by admin
+GET http://localhost:5000/api/artwork/admin
+Authorization: Bearer {{token}}
+
+### Review artwork
+POST http://localhost:5000/api/artwork/admin/67dfd8631509e5ade2abf7d0
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+
+{
+    "moderationStatus": "approved",
+    "moderationReason":"This artwork is not appropriate for our platform."
+}
+
+
+
+### Get Artwork by ID
+GET http://localhost:5000/api/artwork/67c7f59fa9b2f6ef05105332
+
+
+### Update Artwork
+PUT http://localhost:5000/api/artwork/67e3b311667eded4e9990008
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDE1ODAwZDhhZDJkZDc5YzY5MDQ0ZSIsInJvbGUiOlsidXNlciIsImFydGlzdCIsImFkbWluIl0sImlhdCI6MTc0Mjk3NDY3MCwiZXhwIjoxNzQzMDYxMDcwfQ.t6fnl_c5xAo4g9PG4rRDhoua_YUljOFuWKFBTsRdXEo
+Content-Type: application/json
+
+{
+  "title": "Rustic Treehouse Overlooking a Great View",
+  "description": "Nestled amidst a lush, sprawling forest with rolling hills stretching beyond the horizon, this rustic treehouse stands as a quiet retreat into nature. Constructed with weathered wooden planks, the elevated cabin appears to be a charming sanctuary, blending seamlessly with the greenery around it. Positioned at the edge of a small clearing, the structure is supported by sturdy wooden beams and accessed via a simple yet functional wooden staircase with railings. \n\nSurrounding the treehouse, an expanse of dense trees dominates the landscape, creating a natural enclosure that exudes tranquility. The vibrant green leaves of deciduous trees intermingle with the darker, deeper hues of evergreen conifers, crafting a rich tapestry of foliage that stretches far and wide. Their branches intertwine overhead, forming a soft canopy that filters sunlight and casts gentle dappled shadows onto the ground below. \n\nIn the background, rolling hills covered in thick vegetation rise gradually, their peaks fading into a hazy, golden horizon. The atmosphere is imbued with a sense of serenity, where the sounds of rustling leaves and distant bird songs replace the bustling noise of urban life. The image evokes a feeling of solitude and peace, ideal for those seeking an escape from modernity to reconnect with the wilderness. \n\nThe rustic charm of the treehouse suggests a handcrafted dwelling, possibly used for quiet reflection, writing, or as a temporary shelter for adventurers exploring the wilderness. Its aged wooden exterior, simple door, and modest size indicate a minimalist yet functional design, offering just enough space for a person to rest while being immersed in nature. \n\nThe small clearing surrounding the treehouse is adorned with wildflowers and patches of grass, adding to the organic beauty of the scene. The uneven terrain with small mounds of earth and rocks further enhances the untouched, raw appeal of the landscape. \n\nAs the sun begins to set, a warm, golden hue washes over the scenery, softening the outlines of the distant hills and casting a gentle glow on the treetops. The interplay of light and shadow enriches the visual depth of the scene, making it a picturesque representation of nature's harmony. \n\nThis image encapsulates the essence of a hidden getaway, a place where time slows down, and one can embrace the quiet rhythms of the natural world.",
+  "category": ["Nature", "Landscape", "Rustic Architecture", "Forest", "Treehouse"],
+  "status": "available",
+  "price": 0
+}
+
+### Delete Artwork
+DELETE http://localhost:5000/api/artwork/67c7f59fa9b2f6ef05105332
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDE1ODAwZDhhZDJkZDc5YzY5MDQ0ZSIsInJvbGUiOlsidXNlciIsImFydGlzdCIsImFkbWluIl0sImlhdCI6MTc0MTE1NzUzOSwiZXhwIjoxNzQxMjQzOTM5fQ.XbzWcCuTGNLhthFo5LGgvN_HihPMIwTjT-K_s7KlwGw
+Content-Type: application/json
+
+
+### Category
+GET http://localhost:5000/api/artwork/category

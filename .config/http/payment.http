@@ -1,0 +1,3 @@
+### Get history
+GET http://localhost:5000/api/payment?skip=0&take=5
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDE1ODIwZDhhZDJkZDc5YzY5MDQ1MiIsInJvbGUiOlsidXNlciJdLCJpYXQiOjE3NDIyNzMyMjksImV4cCI6MTc0MjM1OTYyOX0.1W3Hwr-HgMDRLsHojgLXzIo2H06W-qKNP0J9lmLdAyo

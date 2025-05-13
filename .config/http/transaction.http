@@ -1,0 +1,20 @@
+### Create Transaction
+POST http://localhost:5000/api/transaction/create
+Content-Type: application/json
+
+{
+    "walletId": "<WALLET_ID>",
+    "amount": 100,
+    "type": "DEPOSIT"
+}
+
+### Get Transactions
+GET http://localhost:5000/api/transaction/<WALLET_ID>
+
+### Get all transactions (through wallet interface)
+GET http://localhost:5000/api/wallet/transactions
+Authorization: Bearer YOUR_AUTH_TOKEN_HERE
+
+### Get paginated transactions
+GET http://localhost:5000/api/wallet/transactions?skip=0&take=5
+Authorization: Bearer YOUR_AUTH_TOKEN_HERE

@@ -1,0 +1,63 @@
+@baseUrl = http://localhost:5000/api
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDE1ODAwZDhhZDJkZDc5YzY5MDQ0ZSIsInJvbGUiOlsidXNlciIsImFydGlzdCIsImFkbWluIl0sImlhdCI6MTc0MzgzNzA1NSwiZXhwIjoxNzQzOTIzNDU1fQ.ZYUaKfyAr237Vs9DeM_RNvVwJQoqVbMeELoAZ6UE3XA
+### Create a new notification
+POST http://localhost:5000/api/notification/
+Content-Type: application/json
+
+{
+  "title":"Demo Notification 2",
+  "content":"Lorem ipsum odor amet, consectetuer adipiscing elit. Bibendum inceptos venenatis potenti ac pulvinar. Volutpat convallis metus netus hendrerit ut. Fermentum nulla libero imperdiet praesent, lectus lorem ad turpis. Nulla bibendum imperdiet tristique; proin iaculis orci torquent. Molestie ut lacinia rutrum platea finibus faucibus non. Eros in risus auctor inceptos eu non bibendum adipiscing dignissim. Mi lectus auctor vestibulum elit lacus vehicula. Phasellus vulputate nostra sem torquent ligula vehicula habitant lacinia. Efficitur pharetra maecenas a dignissim in sit congue.",
+  "userId":"67415800d8ad2dd79c69044e"
+}
+
+### GET notification by user id
+GET http://localhost:5000/api/notification?take=1&skip=1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDE1ODAwZDhhZDJkZDc5YzY5MDQ0ZSIsInJvbGUiOlsidXNlciJdLCJpYXQiOjE3MzQ2ODY4NjYsImV4cCI6MTczNDc3MzI2Nn0.X2EiPdaSO6PZzB-2E6lwl6yBt-bKjLdAxJxMxK_MF4s
+
+
+### GET notification by user id
+GET {{baseUrl}}/notification?take=5&skip=0
+Authorization: Bearer {{token}}
+
+
+### Lấy danh sách thông báo của user
+GET {{baseUrl}}/notification
+Authorization: Bearer {{token}}
+
+
+
+### Lấy số lượng thông báo chưa đọc
+GET {{baseUrl}}/notification/unread
+Authorization: Bearer {{token}}
+
+
+### Đánh dấu một thông báo đã đọc
+PUT {{baseUrl}}/notification/read/676bd47888b810ad45cc6071
+Authorization: Bearer {{token}}
+
+### Xóa một thông báo
+DELETE {{baseUrl}}/notification/delete/676bd02d88b810ad45cc6069
+Authorization: Bearer {{token}}
+
+
+### Lấy thông báo của admin
+GET {{baseUrl}}/notification/admin
+Authorization: Bearer {{token}}
+
+### Lấy thông báo admin với phân trang
+GET {{baseUrl}}/notification/admin?skip=0&take=10
+Authorization: Bearer {{token}}
+
+
+### Gửi thông báo cho tất cả người dùng
+POST {{baseUrl}}/notification/admin/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "title": "Thông báo hệ thống",
+  "content": "Hệ thống sẽ bảo trì từ 2h-4h sáng ngày 20/11/2023",
+  "roles": ["user", "artist", "admin"],
+  "isSystem": false,
+  "refType": "maintenance"
+}

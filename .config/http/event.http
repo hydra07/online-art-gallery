@@ -1,0 +1,41 @@
+### Test Get All Events
+GET http://localhost:5000/api/event/
+Authorization: Bearer <your_token_here>
+
+### Test Get Event By ID
+GET http://localhost:5000/api/event/67bdd145e75eeff1eca00a8e
+Authorization: Bearer <your_token_here>
+
+### Test Create Event
+POST http://localhost:5000/api/event/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NjU4YWJjMmU1ZTQ1Y2ZhNWMzYjMwNSIsInJvbGUiOlsiYWRtaW4iXSwiaWF0IjoxNzQxMTkzMTAxLCJleHAiOjE3NDEyNzk1MDF9.eNqBaEG7Yfx3kdzI_s0pBVUT-32jYyscWVOSafFwnNg
+Content-Type: application/json
+
+{
+  "title": "demoSample Event",
+  "description": "demoThis is a sample event description.",
+  "type": "vdemoconference",
+  "startDate": "2025-03-01T10:00:00.000Z",
+  "endDate": "2025-03-01T18:00:00.000Z",
+  "status": "demoupcoming",
+  "organizer": "demoOrganizer Name",
+  "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+}
+
+### Test Update Event
+PUT http://localhost:5000/api/event/{id}
+Authorization: Bearer <your_token_here>
+Content-Type: application/json
+
+{
+  "name": "Updated Event",
+  "date": "2024-01-02",
+  "location": "Online"
+}
+
+### Test Delete Event
+DELETE http://localhost:5000/api/event/{id}
+Authorization: Bearer <your_token_here>
+
+### Test User Authentication
+### Test Get User Info

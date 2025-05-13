@@ -1,0 +1,23 @@
+### Create a new collection
+POST http://localhost:5000/api/collection
+Content-Type: application/json
+
+{
+  "title": "New Collection",
+  "description": "Description of the new collection"
+}
+
+### Get all collections
+GET http://localhost:5000/api/collection
+
+### Get a specific collection by ID
+GET http://localhost:5000/api/collection?id=collectionId
+
+### Update a collection
+PUT http://localhost:5000/api/collection
+Content-Type: application/json
+
+{
+  "id": "67bdaac9d1df51e7be76f152",
+  "artworks": ["67bb4a673eac194dd511ffd4"]
+}

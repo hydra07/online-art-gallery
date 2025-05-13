@@ -1,0 +1,32 @@
+### Deposit into wallet
+POST http://localhost:5000/api/wallet/deposit
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDE1ODAwZDhhZDJkZDc5YzY5MDQ0ZSIsInJvbGUiOlsidXNlciIsImFydGlzdCIsImFkbWluIl0sImlhdCI6MTc0MjYzODIyNSwiZXhwIjoxNzQyNzI0NjI1fQ.CE5JUBBuvPakG4RjX3IFTS7FX3w1qGtjJgr0DMujEYA
+
+{
+  "amount": 5000,
+  "description": "Nạp cạc 20k demo"
+}
+
+### Withdraw from wallet
+POST http://localhost:5000/api/wallet/withdraw
+Content-Type: application/json
+Authorization: Bearer YOUR_AUTH_TOKEN_HERE
+
+{
+  "amount": 100
+}
+
+### Get transaction history (with pagination)
+GET http://localhost:5000/api/wallet/transactions?skip=0&take=10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDE1ODAwZDhhZDJkZDc5YzY5MDQ0ZSIsInJvbGUiOlsidXNlciIsImFydGlzdCIsImFkbWluIl0sImlhdCI6MTc0MjM2Mzk2OCwiZXhwIjoxNzQyNDUwMzY4fQ.B1Gzr4Zsk86o4AHfCR4PFAkc6mHX9J0FZfnc2F0yRtY
+
+
+### Get all transaction history (without pagination)
+GET http://localhost:5000/api/wallet/transactions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDE1ODAwZDhhZDJkZDc5YzY5MDQ0ZSIsInJvbGUiOlsidXNlciIsImFydGlzdCIsImFkbWluIl0sImlhdCI6MTc0MjYzODIyNSwiZXhwIjoxNzQyNzI0NjI1fQ.CE5JUBBuvPakG4RjX3IFTS7FX3w1qGtjJgr0DMujEYA
+
+
+### GET Wallet
+GET http://localhost:5000/api/wallet/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NDE1ODAwZDhhZDJkZDc5YzY5MDQ0ZSIsInJvbGUiOlsidXNlciIsImFydGlzdCIsImFkbWluIl0sImlhdCI6MTc0MjM2Mzk2OCwiZXhwIjoxNzQyNDUwMzY4fQ.B1Gzr4Zsk86o4AHfCR4PFAkc6mHX9J0FZfnc2F0yRtY

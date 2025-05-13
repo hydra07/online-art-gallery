@@ -1,0 +1,24 @@
+# api
+# api-enhanced
+# client
+# client-admin
+
+# node_modules
+/node_modules
+
+# for npm/yarn/bun/
+bun.lockb
+yarn.lockb
+package-.json
+
+bun.lock
+package-lock.json
+
+# for editor
+.vscode
+.idea
+*.iml
+
+.husky
+.github
+.docs
