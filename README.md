@@ -1,6 +1,6 @@
 # Online Art Gallery (OAG)
 
-![OAG Logo](./profile/image/logo.svg)
+![OAG Logo](./.config/image/logo.svg)
 
 ## 📖 Overview
 
@@ -48,7 +48,7 @@ Online Art Gallery (OAG) is a comprehensive platform for sharing, exploring, and
 1. Clone the repository
 
 ```bash
-git clone https://github.com/OnlineArtGallery-SEP490-SP25-SE11/oag.git
+git clone https://github.com/hydra07/online-art-gallery.git
 cd oag
 ```
 
@@ -59,8 +59,9 @@ cd oag
 ```
 
 1. Set up environment variables
-   - Copy `.env.example` files to `.env` in each project directory
-   - Update the environment variables with your configuration
+
+    - Copy `.env.example` files to `.env` in each project directory
+    - Update the environment variables with your configuration
 
 1. Start the development servers
 
@@ -79,93 +80,107 @@ This starts:
 The project follows a monorepo structure with three main components:
 
 1. **API (Backend)**
-   - Express.js REST API with TypeScript
-   - MongoDB Atlas database with Mongoose ODM
-   - JWT authentication and role-based access control
-   - Integration with external services (PayOS, Cloudinary, OpenAI)
+
+    - Express.js REST API with TypeScript
+    - MongoDB Atlas database with Mongoose ODM
+    - JWT authentication and role-based access control
+    - Integration with external services (PayOS, Cloudinary, OpenAI)
 
 2. **Client (Frontend)**
-   - Next.js 14 with React
-   - TypeScript for type safety
-   - Tailwind CSS for styling
-   - Internationalization support
+
+    - Next.js 14 with React
+    - TypeScript for type safety
+    - Tailwind CSS for styling
+    - Internationalization support
 
 3. **Client Admin (Dashboard)**
-   - Next.js 14 with React
-   - TypeScript for type safety
-   - Admin-specific components and workflows
-   - Advanced data visualization
+    - Next.js 14 with React
+    - TypeScript for type safety
+    - Admin-specific components and workflows
+    - Advanced data visualization
 
 ## 🛠️ Technology Stack
 
 ### API (Backend)
 
 - **Core**
-  - [Bun](https://bun.sh) - High-performance JavaScript runtime
-  - [Express](https://expressjs.com) - Web framework
-  - [TypeScript](https://www.typescriptlang.org/) - Type safety
+
+    - [Bun](https://bun.sh) - High-performance JavaScript runtime
+    - [Express](https://expressjs.com) - Web framework
+    - [TypeScript](https://www.typescriptlang.org/) - Type safety
 
 - **Database & Storage**
-  - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) - Cloud database service
-    - [Mongoose](https://mongoosejs.com) - ODM
-    - [@typegoose/typegoose](https://typegoose.github.io/typegoose/) - TypeScript models
-  - [Cloudinary](https://cloudinary.com/) - Cloud-based image storage and transformation
+
+    - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) - Cloud database service
+        - [Mongoose](https://mongoosejs.com) - ODM
+        - [@typegoose/typegoose](https://typegoose.github.io/typegoose/) - TypeScript models
+    - [Cloudinary](https://cloudinary.com/) - Cloud-based image storage and transformation
 
 - **Authentication & Security**
-  - [JWT](https://jwt.io/) - Token-based auth
-  - [bcryptjs](https://github.com/dcodeIO/bcrypt.js) - Password hashing
-  - [Google Auth Library](https://github.com/googleapis/google-auth-library-nodejs) - OAuth integration
-  - [cookie-parser](https://github.com/expressjs/cookie-parser) - Cookie handling
-  - [cors](https://github.com/expressjs/cors) - CORS support
+
+    - [JWT](https://jwt.io/) - Token-based auth
+    - [bcryptjs](https://github.com/dcodeIO/bcrypt.js) - Password hashing
+    - [Google Auth Library](https://github.com/googleapis/google-auth-library-nodejs) - OAuth integration
+    - [cookie-parser](https://github.com/expressjs/cookie-parser) - Cookie handling
+    - [cors](https://github.com/expressjs/cors) - CORS support
 
 - **Real-time Features**
-  - [Socket.IO](https://socket.io) - WebSocket implementation for real-time features
+
+    - [Socket.IO](https://socket.io) - WebSocket implementation for real-time features
 
 - **Validation & Error Handling**
-  - [Zod](https://zod.dev) - Schema validation
-  - [http-errors](https://github.com/jshttp/http-errors) - HTTP error creation
-  - [envalid](https://github.com/af/envalid) - Environment validation
+
+    - [Zod](https://zod.dev) - Schema validation
+    - [http-errors](https://github.com/jshttp/http-errors) - HTTP error creation
+    - [envalid](https://github.com/af/envalid) - Environment validation
 
 - **Payment Processing**
-  - [PayOS](https://payos.vn/) - Vietnamese payment gateway integration
+
+    - [PayOS](https://payos.vn/) - Vietnamese payment gateway integration
 
 - **AI Integration**
-  - [OpenAI](https://openai.com/) - AI models for text and image analysis
+
+    - [OpenAI](https://openai.com/) - AI models for text and image analysis
 
 - **Logging & Monitoring**
-  - [Pino](https://getpino.io) - Logger
-  - [pino-http](https://github.com/pinojs/pino-http) - HTTP logging
-  - [pino-pretty](https://github.com/pinojs/pino-pretty) - Log formatting
+    - [Pino](https://getpino.io) - Logger
+    - [pino-http](https://github.com/pinojs/pino-http) - HTTP logging
+    - [pino-pretty](https://github.com/pinojs/pino-pretty) - Log formatting
 
 ### Client (Frontend)
 
 - **Core**
-  - [Next.js 14](https://nextjs.org) - React framework with app router
-  - [TypeScript](https://www.typescriptlang.org/) - Type safety
-  - [React](https://reactjs.org) - JavaScript library for building user interfaces
+
+    - [Next.js 14](https://nextjs.org) - React framework with app router
+    - [TypeScript](https://www.typescriptlang.org/) - Type safety
+    - [React](https://reactjs.org) - JavaScript library for building user interfaces
 
 - **State Management & Data Fetching**
-  - [Zustand](https://zustand-demo.pmnd.rs/) - Client state management
-  - [Axios](https://axios-http.com) - HTTP client
+
+    - [Zustand](https://zustand-demo.pmnd.rs/) - Client state management
+    - [Axios](https://axios-http.com) - HTTP client
 
 - **UI & Styling**
-  - [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS
-  - [Shadcn/ui](https://ui.shadcn.com) - UI component collection
-  - [Radix UI](https://www.radix-ui.com) - Headless UI components
-  - [Lucide Icons](https://lucide.dev) - Icon library
-  - [Three.js](https://threejs.org/) - 3D graphics library
-  - [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) - React renderer for Three.js
+
+    - [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS
+    - [Shadcn/ui](https://ui.shadcn.com) - UI component collection
+    - [Radix UI](https://www.radix-ui.com) - Headless UI components
+    - [Lucide Icons](https://lucide.dev) - Icon library
+    - [Three.js](https://threejs.org/) - 3D graphics library
+    - [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) - React renderer for Three.js
 
 - **Forms & Validation**
-  - [React Hook Form](https://react-hook-form.com) - Form handling
-  - [Zod](https://zod.dev) - Schema validation
+
+    - [React Hook Form](https://react-hook-form.com) - Form handling
+    - [Zod](https://zod.dev) - Schema validation
 
 - **Authentication**
-  - [NextAuth.js](https://next-auth.js.org) - Authentication
-  - [JWT](https://jwt.io/) - Token handling
+
+    - [NextAuth.js](https://next-auth.js.org) - Authentication
+    - [JWT](https://jwt.io/) - Token handling
 
 - **Internationalization**
-  - [next-intl](https://next-intl-docs.vercel.app) - i18n solution
+    - [next-intl](https://next-intl-docs.vercel.app) - i18n solution
 
 ## 📁 Project Structure
 
@@ -266,3 +281,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - [PayOS Documentation](https://payos.vn/docs)
 - [Three.js Documentation](https://threejs.org/docs/)
 - [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
+
